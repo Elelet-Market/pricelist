@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elelet Market | Your friendly neighborhood market</title>
+<meta name="description" content="Fresh chicken, pork, eggs, rice, shrimp and cold cuts in Caloocan. See today's prices, build your order and send it on Messenger. Free delivery within Nova Bayan, San Agustin, Bagumbong, Congress and Almar.">
+<meta name="theme-color" content="#704f2f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elelet Market | Your friendly neighborhood market">
+<meta property="og:description" content="See today's prices, tap + to build your order, and send it to us on Messenger.">
+<meta property="og:image" content="https://eleletmarket.github.io/share.png">
+<meta property="og:url" content="https://eleletmarket.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23704f2f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='900' font-size='38' text-anchor='middle' fill='%23e8ceb0'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a market price board — kraft-paper board of categories with dotted price leaders, brown ink, one Messenger CTA */
+:root{
+  --brown:#704f2f;          /* brand: gray brown */
+  --kraft:#e8ceb0;          /* brand: pastel gray orange */
+  --bg:#faf5ef;
+  --surface:#f3e6d6;
+  --ink:#2e2117;
+  --muted:#7a6553;
+  --line:#d9c2a6;
+  --cta-bg:#704f2f;
+  --cta-fg:#fbf3e9;
+  --font-display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body:"Figtree", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --brown:#c79a6c; --kraft:#e8ceb0; --bg:#1c1510; --surface:#2a2018; --ink:#f3e6d6;
+    --muted:#b59d85; --line:#4a3a2c; --cta-bg:#e8ceb0; --cta-fg:#2e2117; color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;padding-inline:16px;padding-block:0}
+.wrap{max-width:1040px;margin-inline:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brown);outline-offset:3px;border-radius:6px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand small{font-size:12.5px;font-weight:500;color:var(--muted)}
+.brand b{font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+nav{display:flex;gap:18px;align-items:center}
+nav a.link{text-decoration:none;font-weight:600;font-size:15px;color:var(--muted)}
+nav a.link:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--cta-bg);color:var(--cta-fg);text-decoration:none;font-weight:700;padding:11px 18px;border-radius:999px;font-size:15px;white-space:nowrap;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+@media (max-width:640px){ nav a.link{display:none} .top .btn{padding:9px 14px;font-size:14px} }
+
+/* hero */
+.hero{padding-block:56px 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.hero > *{min-width:0}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;font-weight:700;color:var(--brown)}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.025em;margin:10px 0 18px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--brown)}
+.lede{font-size:18px;color:var(--muted);max-width:52ch;margin:0 0 26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.tag{background:var(--kraft);color:#2e2117;border-radius:18px;padding:26px 26px 22px;position:relative;transform:rotate(1.5deg);box-shadow:0 14px 30px -18px rgba(60,40,20,.45)}
+.tag::before{content:"";position:absolute;top:16px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.tag h2{font-family:var(--font-display);font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin:22px 0 12px;color:#704f2f;font-weight:700;text-align:center}
+.tag ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tag li{display:flex;align-items:baseline;gap:8px;font-weight:600}
+.tag li .dots{flex:1;border-bottom:2px dotted rgba(112,79,47,.45);transform:translateY(-4px)}
+.tag li .p{font-family:var(--font-display);font-weight:800;font-variant-numeric:tabular-nums}
+.tag small{display:block;text-align:center;margin-top:14px;font-size:12.5px;color:#704f2f}
+@media (max-width:780px){ .hero{grid-template-columns:1fr;padding-block:36px 28px} .tag{transform:none;max-width:420px} }
+
+/* sections */
+section{padding-block:44px}
+h2.sec{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 24px}
+
+/* price board */
+.board{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:inherit;font-weight:600;font-size:14px;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brown);border-color:var(--brown);color:var(--bg)}
+.search{display:block;width:100%;font:inherit;padding:11px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:18px}
+.cats{columns:2 340px;column-gap:36px}
+.cat{break-inside:avoid;margin-bottom:26px}
+.cat h3{font-family:var(--font-display);font-weight:700;font-size:20px;margin:0 0 6px;display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:2px solid var(--brown);padding-bottom:6px}
+.cat h3 span{font-family:var(--font-body);font-size:12.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.cat-note{margin:2px 0 4px;font-size:13.5px;color:var(--muted)}
+.row{display:flex;align-items:baseline;gap:8px;padding-block:7px;border-bottom:1px dashed var(--line)}
+.row .n{min-width:0}
+.row .dots{flex:1;min-width:16px;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.row .p{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row.out .n,.row.out .p{color:var(--muted)}
+.pill{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;margin-left:6px}
+.tag li.out{opacity:.55}
+.empty{color:var(--muted);padding:12px 0}
+.note{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+
+/* how to order */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;padding:22px;border-radius:18px;border:1px solid var(--line);min-width:0}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--kraft);color:#2e2117;font-family:var(--font-display);font-weight:800;margin-bottom:12px}
+.steps h3{font-family:var(--font-display);font-size:19px;margin:0 0 6px}
+.steps p{margin:0;color:var(--muted)}
+@media (max-width:780px){ .steps{grid-template-columns:1fr} }
+
+/* closing band */
+.band{background:var(--brown);color:var(--kraft);border-radius:26px;padding:40px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-block:20px 44px}
+@media (prefers-color-scheme: dark){:root .band{color:#2e2117}}
+.band h2{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.6vw,36px);margin:0;letter-spacing:-.02em;text-wrap:balance;max-width:22ch}
+.band .btn{background:var(--kraft);color:#2e2117}
+@media (prefers-color-scheme: dark){:root .band .btn{background:#2e2117;color:#e8ceb0}}
+
+footer{border-top:1px solid var(--line);padding-block:22px 34px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* units + order builder */
+.unit{color:var(--muted);font-size:13px;font-weight:500;margin-left:6px;white-space:nowrap}
+.qty{flex:none;width:104px;display:flex;justify-content:flex-end;align-items:center;gap:6px;align-self:center}
+.qbtn{font:inherit;font-weight:700;font-size:18px;line-height:1;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--brown);background:transparent;color:var(--brown);cursor:pointer;display:grid;place-items:center;padding:0}
+.qbtn.add{background:var(--brown);color:var(--bg)}
+.qn{min-width:22px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.row.picked{background:color-mix(in srgb, var(--kraft) 35%, transparent);border-radius:8px;margin-inline:-6px;padding-inline:6px}
+@media (max-width:480px){ .qty{width:96px} .unit{display:block;margin-left:0} .row .pill{display:table;margin:4px 0 0} }
+
+.orderbar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -10px 30px -20px rgba(40,25,10,.5)}
+.orderbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.orderbar .sum{font-weight:700;font-variant-numeric:tabular-nums}
+.orderbar .sum small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+body.has-order{padding-bottom:88px}
+
+dialog.cart{border:none;border-radius:22px;padding:0;width:min(520px,calc(100% - 24px));max-height:calc(100% - 24px);background:var(--bg);color:var(--ink);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+dialog.cart::backdrop{background:rgba(30,20,12,.55)}
+.cart-in{padding:22px;display:grid;gap:16px}
+.cart-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cart-head h2{font-family:var(--font-display);font-weight:800;font-size:26px;margin:0}
+.x{font:inherit;font-size:22px;line-height:1;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.cart-list .row{border-bottom:1px dashed var(--line)}
+.cart-total{display:flex;justify-content:space-between;font-family:var(--font-display);font-weight:800;font-size:20px;font-variant-numeric:tabular-nums}
+.fieldset{display:grid;gap:8px}
+.fieldset label.lbl{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brown)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{font:inherit;font-weight:600;font-size:14.5px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brown);border-color:var(--brown);color:var(--bg)}
+.txt{font:inherit;width:100%;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+textarea.txt{min-height:120px;resize:vertical;font-size:14px}
+.cart-actions{display:grid;gap:10px}
+.cart-actions .btn{justify-content:center}
+.linkbtn{font:inherit;background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;justify-self:center;font-size:14px}
+.hint{font-size:13.5px;color:var(--muted);margin:0}
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:600;font-size:14.5px;z-index:50;max-width:calc(100% - 32px);text-align:center}
+
+/* pick-up & delivery */
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.info div{padding:18px;border-radius:16px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.info dt{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brown);margin-bottom:4px}
+.info dd{margin:0;font-weight:600}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Elelet Market home"><span class="brand-text"><b>Elelet Market</b><small>Your friendly neighborhood market</small></span></a>
+    <nav>
+      <a class="link" href="#prices">Prices</a>
+      <a class="link" href="#order">How to order</a>
+      <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.15 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
+        Message us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Fresh meat · Eggs · Rice · Cold cuts</div>
+      <h1>Your weekly market run, <em>sorted in one message.</em></h1>
+      <p class="lede">Elelet Market brings whole chicken, pork cuts, eggs, rice, shrimp, siomai, gyoza and ready-to-cook favorites to your table. Send us your list on Facebook and pick it up or have it delivered.</p>
+      <div class="cta-row">
+        <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.15 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
+          Order on Messenger
+        </a>
+        <a class="btn ghost" href="#prices">See price list</a>
+      </div>
+    </div>
+    <aside class="tag" aria-label="Customer favorites" hidden>
+      <h2>Suki favorites</h2>
+      <ul id="favs"></ul>
+      <small>We accept Cash, GCash and Bank Transfer</small>
+    </aside>
+  </div>
+
+  <section id="prices">
+    <h2 class="sec">Price list</h2>
+    <p class="sub">Current prices in Philippine pesos, straight from our store records. Tap <b>+</b> to add items to your order list, then send it to us on Messenger.</p>
+    <div class="board">
+      <label for="q" class="eyebrow" style="display:block;margin-bottom:6px">Find a product</label>
+      <input id="q" class="search" type="search" placeholder="Try “longganisa” or “eggs”" autocomplete="off">
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+      <div class="cats" id="cats"><p class="empty" id="loading">Loading today's prices…</p></div>
+      <p class="note">Prices may change with supplier costs. Ask us about sizes and weights.</p>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2 class="sec">How to order</h2>
+    <p class="sub">No app, no account. Just send us a message.</p>
+    <ol class="steps">
+      <li><h3>Send your list</h3><p>Message our Facebook page with the items and quantities you need.</p></li>
+      <li><h3>Pick up or delivery</h3><p>Tell us if you'll pick up or want it delivered, and when. We'll confirm your total.</p></li>
+      <li><h3>Pay the way you like</h3><p>Choose Cash, GCash or Bank Transfer. We'll send the payment details once we confirm your order.</p></li>
+    </ol>
+  </section>
+
+  <section id="info" hidden>
+    <h2 class="sec">Pick-up &amp; Delivery</h2>
+    <p class="sub">Where to find us and where we deliver.</p>
+    <dl class="info" id="infoList"></dl>
+  </section>
+
+  <div class="band">
+    <h2>Ready with your list? We're one message away.</h2>
+    <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.15 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
+      Message Elelet Market
+    </a>
+  </div>
+</main>
+
+<div class="orderbar" id="orderbar" hidden>
+  <div class="wrap">
+    <div class="sum" id="barSum"></div>
+    <button class="btn" type="button" id="openCart">View my order</button>
+  </div>
+</div>
+
+<dialog class="cart" id="cart" aria-labelledby="cartTitle">
+  <div class="cart-in">
+    <div class="cart-head"><h2 id="cartTitle">My order</h2><button class="x" type="button" id="closeCart" aria-label="Close">×</button></div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-total"><span>Estimated total</span><span id="cartTotal"></span></div>
+    <div class="fieldset">
+      <label class="lbl">Pick up or delivery</label>
+      <div class="seg" id="mode" role="group" aria-label="Pick up or delivery">
+        <button type="button" data-v="Pick up" aria-pressed="true">Pick up</button>
+        <button type="button" data-v="Delivery" aria-pressed="false">Delivery</button>
+      </div>
+    </div>
+    <div class="fieldset">
+      <label class="lbl" for="cName">Your name</label>
+      <input class="txt" id="cName" type="text" autocomplete="name" placeholder="Optional">
+    </div>
+    <div class="fieldset" id="addrWrap" hidden>
+      <label class="lbl" for="cAddr">Delivery address</label>
+      <input class="txt" id="cAddr" type="text" autocomplete="street-address" placeholder="House no., street, barangay">
+    </div>
+    <div class="fieldset">
+      <label class="lbl" for="cNote">Notes</label>
+      <input class="txt" id="cNote" type="text" placeholder="Optional, e.g. preferred time">
+    </div>
+    <div class="fieldset">
+      <label class="lbl" for="cText">Message preview</label>
+      <textarea class="txt" id="cText" readonly></textarea>
+    </div>
+    <div class="cart-actions">
+      <a class="btn" id="sendBtn" href="#" target="_blank" rel="noopener">Copy order &amp; open Messenger</a>
+      <p class="hint">Your order is copied. In Messenger, tap the message box and choose <b>Paste</b>, then send. We'll confirm availability and your final total.</p>
+      <button class="linkbtn" type="button" id="clearCart">Clear order</button>
+    </div>
+  </div>
+</dialog>
+
+<footer>
+  <div class="wrap"><span id="copy">© Elelet Market</span><span>Your friendly neighborhood market</span></div>
+</footer>
+
+<script>
+// ===== SETTINGS =====
+// Your Apps Script web app link (Deploy → Manage deployments → Web app URL, ends in /exec)
+const API_URL = 'https://script.google.com/macros/s/AKfycbwd8i4tHqA1vYPM-u1FvM97P_ubR31wHvGWlxixYz58X0SFUcMH9CruGmpZ8WN9lTkoGg/exec';
+// ====================
+
+fetch(API_URL + '?format=json')
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(start)
+  .catch(() => {
+    document.getElementById('cats').innerHTML =
+      '<p class="empty">We couldn\'t load today\'s prices. Please refresh the page, or message us on Facebook.</p>';
+  });
+
+function start(DATA){
+document.querySelector('.tag').hidden = false;
+document.querySelectorAll("a.fb").forEach(a => a.href = DATA.facebook);
+document.getElementById("copy").textContent = "© " + DATA.year + " Elelet Market";
+const MENU = DATA.menu;
+const ITEMS = {}; MENU.forEach(m => m.items.forEach(it => ITEMS[it.name] = it));
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+let cart = store.get("elelet-cart") || {};
+Object.keys(cart).forEach(n => { if (!ITEMS[n] || !ITEMS[n].inStock || !(cart[n] > 0)) delete cart[n]; });
+const peso = n => "₱" + n.toLocaleString("en-PH");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("favs").innerHTML = DATA.favorites.map(f =>
+  `<li class="${f.inStock?"":"out"}">${esc(f.name)}${f.unit?`<small style="font-weight:500;margin-left:4px">${esc(f.unit)}</small>`:""}<span class="dots"></span><span class="p">${peso(f.price)}</span></li>`).join("");
+if (!DATA.favorites.length) document.querySelector(".tag").hidden = true;
+let active = "All";
+const filtersEl = document.getElementById("filters"), catsEl = document.getElementById("cats"), q = document.getElementById("q");
+
+["All", ...MENU.map(m => m.cat)].forEach(c => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.type = "button"; b.textContent = c; b.id = "chip-" + c.replace(/\s/g,"");
+  b.setAttribute("aria-pressed", c === active);
+  b.onclick = () => { active = c; filtersEl.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x.textContent === c)); render(); };
+  filtersEl.appendChild(b);
+});
+
+function qtyHtml(it){
+  if (!it.inStock) return `<span class="qty"></span>`;
+  const n = cart[it.name] || 0, a = esc(it.name);
+  return n
+    ? `<span class="qty"><button class="qbtn" type="button" data-act="dec" data-n="${a}" aria-label="Remove one ${a}">−</button><span class="qn" aria-live="polite">${n}</span><button class="qbtn" type="button" data-act="inc" data-n="${a}" aria-label="Add one more ${a}">+</button></span>`
+    : `<span class="qty"><button class="qbtn add" type="button" data-act="inc" data-n="${a}" aria-label="Add ${a} to order">+</button></span>`;
+}
+function rowHtml(it){
+  const picked = (cart[it.name] || 0) > 0;
+  return `<div class="row${it.inStock?"":" out"}${picked?" picked":""}"><span class="n">${esc(it.name)}${it.unit?`<span class="unit">${esc(it.unit)}</span>`:""}${it.inStock?"":`<span class="pill">Out of stock</span>`}</span><span class="dots"></span><span class="p">${peso(it.price)}</span>${qtyHtml(it)}</div>`;
+}
+function change(name, d){
+  const n = Math.max(0, (cart[name] || 0) + d);
+  if (n) cart[name] = n; else delete cart[name];
+  store.set("elelet-cart", cart);
+  render(); renderCart();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]");
+  if (!b) return;
+  change(b.dataset.n, b.dataset.act === "inc" ? 1 : -1);
+});
+
+function render(){
+  const term = q.value.trim().toLowerCase();
+  const html = MENU.filter(m => active === "All" || m.cat === active).map(m => {
+    const items = m.items.filter(it => !term || (it.name+" "+m.cat).toLowerCase().includes(term));
+    if (!items.length) return "";
+    return `<div class="cat"><h3>${esc(m.cat)}<span>${items.length} item${items.length>1?"s":""}</span></h3>${m.note?`<p class="cat-note">${esc(m.note)}</p>`:""}` +
+      items.map(rowHtml).join("") + `</div>`;
+  }).join("");
+  catsEl.innerHTML = html || `<p class="empty">No products match “${esc(q.value)}”. Message us and we'll check if we can get it.</p>`;
+}
+// In-page links (Prices, How to order, See price list): scroll inside the page.
+// Apps Script runs the site inside a frame, so plain #links don't work there.
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+  const id = a.getAttribute("href").slice(1);
+  const el = id ? document.getElementById(id) : null;
+  if (!el) return;
+  e.preventDefault();
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const headerH = document.querySelector(".top").offsetHeight;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - headerH - 8, behavior: reduce ? "auto" : "smooth" });
+}));
+q.addEventListener("input", render);
+
+// ---- order list ----
+const bar = document.getElementById("orderbar"), dlg = document.getElementById("cart");
+let mode = "Pick up";
+function lines(){ return Object.keys(cart).map(n => ({ it: ITEMS[n], n: cart[n] })).filter(x => x.it); }
+function orderText(){
+  const L = lines(); let total = 0;
+  const rows = L.map(({it,n}) => { const t = it.price*n; total += t; return `• ${n} × ${it.name}${it.unit?` (${it.unit})`:""} — ${peso(t)}`; });
+  const name = document.getElementById("cName").value.trim(), addr = document.getElementById("cAddr").value.trim(), note = document.getElementById("cNote").value.trim();
+  return ["Hi Elelet Market! I'd like to order:", ...rows, `Estimated total: ${peso(total)}`, "",
+    `Pick up or delivery: ${mode}`,
+    name ? `Name: ${name}` : "",
+    mode === "Delivery" && addr ? `Address: ${addr}` : "",
+    note ? `Notes: ${note}` : ""].filter((x,i,a) => x !== "" || (i>0 && a[i-1] !== "")).join("\n").trim();
+}
+function renderCart(){
+  const L = lines();
+  const count = L.reduce((s,x) => s + x.n, 0), total = L.reduce((s,x) => s + x.n*x.it.price, 0);
+  bar.hidden = !count; document.body.classList.toggle("has-order", !!count);
+  document.getElementById("barSum").innerHTML = `${peso(total)}<small>${count} item${count>1?"s":""} in your order</small>`;
+  document.getElementById("cartList").innerHTML = L.length ? L.map(({it}) => rowHtml(it)).join("") : `<p class="empty">Your order is empty. Tap + next to a product to add it.</p>`;
+  document.getElementById("cartTotal").textContent = peso(total);
+  document.getElementById("cText").value = orderText();
+  if (!count && dlg.open) dlg.close();
+}
+document.getElementById("openCart").onclick = () => { renderCart(); dlg.showModal(); };
+document.getElementById("closeCart").onclick = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+document.getElementById("mode").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  mode = b.dataset.v;
+  document.querySelectorAll("#mode button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  document.getElementById("addrWrap").hidden = mode !== "Delivery";
+  renderCart();
+});
+["cName","cAddr","cNote"].forEach(id => document.getElementById(id).addEventListener("input", () => document.getElementById("cText").value = orderText()));
+document.getElementById("clearCart").onclick = () => { cart = {}; store.set("elelet-cart", cart); render(); renderCart(); };
+
+function toast(msg){
+  const t = document.createElement("div"); t.className = "toast"; t.textContent = msg;
+  (dlg.open ? dlg : document.body).appendChild(t); setTimeout(() => t.remove(), 3500);
+}
+const sendBtn = document.getElementById("sendBtn");
+sendBtn.href = DATA.messenger;
+sendBtn.addEventListener("click", () => {
+  const text = orderText(), ta = document.getElementById("cText");
+  ta.value = text;
+  let ok = false;
+  try { ta.removeAttribute("readonly"); ta.select(); ok = document.execCommand("copy"); ta.setAttribute("readonly",""); } catch(e){}
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).catch(() => {});
+  toast(ok ? "Order copied. Paste it in Messenger and send." : "Copy the message preview, then paste it in Messenger.");
+  // the link itself opens Messenger in a new tab
+});
+
+// ---- pick-up & delivery info ----
+const INFO_LABELS = { PICKUP_LOCATION:"Pick-up location", PICKUP_HOURS:"Pick-up hours", DELIVERY_AREAS:"We deliver to", DELIVERY_FEE:"Delivery fee", DELIVERY_SCHEDULE:"Delivery schedule", OTHER_NOTES:"Good to know" };
+const infoRows = Object.keys(INFO_LABELS).filter(k => DATA.info && String(DATA.info[k] || "").trim());
+if (infoRows.length){
+  document.getElementById("infoList").innerHTML = infoRows.map(k => `<div><dt>${INFO_LABELS[k]}</dt><dd>${esc(DATA.info[k])}</dd></div>`).join("");
+  document.getElementById("info").hidden = false;
+}
+
+render();
+renderCart();
+}
+</script>
+
+</body>
+</html>
