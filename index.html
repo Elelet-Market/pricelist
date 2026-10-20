@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fil">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elelet Market | Your friendly neighborhood market</title>
-<meta name="description" content="Fresh chicken, pork, eggs, rice, shrimp and cold cuts in Caloocan. See today's prices, build your order and send it on Messenger. Free delivery within Nova Bayan, San Agustin, Bagumbong, Congress and Almar.">
+<meta name="description" content="Sariwang manok, baboy, itlog, bigas, hipon at cold cuts sa Caloocan. Tingnan ang presyo ngayon, buuin ang order mo at i-send sa Messenger. Libreng delivery sa Nova Bayan, San Agustin, Bagumbong, Congress at Almar.">
 <meta name="theme-color" content="#704f2f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Elelet Market | Your friendly neighborhood market">
-<meta property="og:description" content="See today's prices, tap + to build your order, and send it to us on Messenger.">
+<meta property="og:description" content="Tingnan ang presyo ngayon, pindutin ang + para buuin ang order mo, at i-send sa amin sa Messenger.">
 <meta property="og:image" content="https://eleletmarket.github.io/share.png">
 <meta property="og:url" content="https://eleletmarket.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23704f2f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='900' font-size='38' text-anchor='middle' fill='%23e8ceb0'%3EE%3C/text%3E%3C/svg%3E">
@@ -202,13 +202,13 @@ textarea.txt{min-height:110px;resize:vertical;font-family:var(--mono);font-size:
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Elelet Market home"><b>Elelet Market</b><small>your friendly neighborhood market</small></a>
+    <a class="brand" href="#top" aria-label="Elelet Market, home"><b>Elelet Market</b><small>your friendly neighborhood market</small></a>
     <nav>
-      <a class="link" href="#prices">Prices</a>
-      <a class="link" href="#order">How to order</a>
-      <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener" aria-label="Message us on Messenger">
+      <a class="link" href="#prices">Presyo</a>
+      <a class="link" href="#order">Paano umorder</a>
+      <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener" aria-label="I-message kami sa Messenger">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.15 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
-        Message us
+        I-message kami
       </a>
     </nav>
   </div>
@@ -217,98 +217,98 @@ textarea.txt{min-height:110px;resize:vertical;font-family:var(--mono);font-size:
 <main class="wrap" id="top">
   <div class="hero">
     <div>
-      <h1>Your weekly market run, sorted in one message.</h1>
+      <h1>Lingguhang pamalengke mo, isang message lang.</h1>
       <ul class="facts" id="facts">
-        <li><span><b>Live prices</b> on chicken, pork, eggs, rice, shrimp and cold cuts</span></li>
-        <li><span>Tap <b>+</b> to build your order, then send it on Messenger</span></li>
+        <li><span><b>Live na presyo</b> ng manok, baboy, itlog, bigas, hipon at cold cuts</span></li>
+        <li><span>Pindutin ang <b>+</b> para buuin ang order mo, tapos i-send sa Messenger</span></li>
       </ul>
       <div class="cta-row">
-        <a class="btn" href="#prices">See prices &amp; order</a>
-        <a class="btn ghost fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">Message us</a>
+        <a class="btn" href="#prices">Umorder na</a>
+        <a class="btn ghost fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">I-message kami</a>
       </div>
     </div>
     <aside class="tag" aria-label="Best sellers" hidden>
       <h2><span class="star" aria-hidden="true">★</span> Best sellers</h2>
       <ul id="favs"></ul>
-      <p class="note">We accept Cash, GCash and Bank Transfer.</p>
+      <p class="note">Tumatanggap kami ng Cash, GCash at Bank Transfer.</p>
     </aside>
   </div>
 
   <section id="prices">
     <h2 class="sec">Price list</h2>
-    <p class="sub">Prices in pesos, straight from our store records. Tap <b>+</b> to add items to your order.</p>
+    <p class="sub">Presyo sa piso, diretso mula sa records ng tindahan. Pindutin ang <b>+</b> para idagdag sa order mo.</p>
     <div class="board">
-      <label for="q" class="sr-only">Search products</label>
-      <input id="q" class="search" type="search" placeholder="Search, e.g. longganisa or eggs" autocomplete="off">
-      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
-      <div class="cats" id="cats" aria-busy="true"><div class="cat"><span class="sr-only">Loading today's prices</span><div class="skel"><i style="width:46%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:38%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:52%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:30%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:44%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:36%"></i><i style="width:14%;margin-left:auto"></i></div></div></div>
-      <p class="note">★ Best seller. Prices may change with supplier costs.</p>
+      <label for="q" class="sr-only">Maghanap ng produkto</label>
+      <input id="q" class="search" type="search" placeholder="Hanapin, hal. longganisa o itlog" autocomplete="off">
+      <div class="filters" id="filters" role="group" aria-label="Piliin ang kategorya"></div>
+      <div class="cats" id="cats" aria-busy="true"><div class="cat"><span class="sr-only">Nilo-load ang presyo ngayon</span><div class="skel"><i style="width:46%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:38%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:52%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:30%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:44%"></i><i style="width:14%;margin-left:auto"></i></div><div class="skel"><i style="width:36%"></i><i style="width:14%;margin-left:auto"></i></div></div></div>
+      <p class="note">★ Best seller. Puwedeng magbago ang presyo depende sa supplier.</p>
     </div>
   </section>
 
   <section id="order">
-    <h2 class="sec">How to order</h2>
-    <p class="sub">No app, no account needed.</p>
+    <h2 class="sec">Paano umorder</h2>
+    <p class="sub">Walang app, walang account na kailangan.</p>
     <ol class="steps">
-      <li><h3>Tap + on what you need</h3><p>Build your order from the price list. Your total updates as you go.</p></li>
-      <li><h3>Send it on Messenger</h3><p>Tap View my order, choose pick-up or delivery, then Copy order &amp; open Messenger and paste.</p></li>
-      <li><h3>We confirm, you pay</h3><p>We check stock and confirm your total. Pay by Cash, GCash or Bank Transfer; we'll send the payment details.</p></li>
+      <li><h3>Pindutin ang + sa kailangan mo</h3><p>Buuin ang order mo mula sa price list. Kusang nag-a-update ang total mo.</p></li>
+      <li><h3>I-send sa Messenger</h3><p>Pindutin ang <b>Tingnan ang order ko</b>, piliin kung pick-up o delivery, tapos <b>I-copy at buksan ang Messenger</b>, at i-paste.</p></li>
+      <li><h3>Kukumpirmahin namin, saka ka magbayad</h3><p>Iche-check namin ang stock at kukumpirmahin ang total mo. Puwedeng Cash, GCash o Bank Transfer; ipapadala namin ang payment details.</p></li>
     </ol>
   </section>
 
   <section id="info" hidden>
-    <h2 class="sec">Pick-up &amp; delivery</h2>
-    <p class="sub">Where to find us and where we deliver.</p>
+    <h2 class="sec">Pick-up at delivery</h2>
+    <p class="sub">Saan kami makikita at saan kami nagde-deliver.</p>
     <dl class="info" id="infoList"></dl>
   </section>
 
   <div class="band">
-    <h2>Ready with your list? We're one message away.</h2>
+    <h2>Handa na ang listahan mo? Isang message lang kami.</h2>
     <a class="btn fb" href="https://www.facebook.com/profile.php?id=61594401745913" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.2 5.42 3.15 7.16.16.15.26.35.27.57l.05 1.78a.8.8 0 0 0 1.12.71l1.98-.87a.8.8 0 0 1 .53-.04c.91.25 1.88.39 2.9.39 5.64 0 10-4.13 10-9.7S17.64 2 12 2Zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63Z"/></svg>
-      Message Elelet Market
+      I-message ang Elelet Market
     </a>
   </div>
 </main>
 <div class="orderbar" id="orderbar" hidden>
   <div class="wrap">
     <div class="sum" id="barSum"></div>
-    <button class="btn" type="button" id="openCart">View my order</button>
+    <button class="btn" type="button" id="openCart">Tingnan ang order ko</button>
   </div>
 </div>
 
 <dialog class="cart" id="cart" aria-labelledby="cartTitle">
   <div class="cart-in">
-    <div class="cart-head"><h2 id="cartTitle">My order</h2><button class="x" type="button" id="closeCart" aria-label="Close">×</button></div>
+    <div class="cart-head"><h2 id="cartTitle">Order ko</h2><button class="x" type="button" id="closeCart" aria-label="Isara">×</button></div>
     <div class="cart-list" id="cartList"></div>
-    <div class="cart-total"><span>Estimated total</span><span id="cartTotal"></span></div>
+    <div class="cart-total"><span>Tantyang total</span><span id="cartTotal"></span></div>
     <div class="fieldset">
-      <label class="lbl">Pick up or delivery</label>
-      <div class="seg" id="mode" role="group" aria-label="Pick up or delivery">
-        <button type="button" data-v="Pick up" aria-pressed="true">Pick up</button>
+      <label class="lbl">Pick-up o delivery</label>
+      <div class="seg" id="mode" role="group" aria-label="Pick-up o delivery">
+        <button type="button" data-v="Pick up" aria-pressed="true">Pick-up</button>
         <button type="button" data-v="Delivery" aria-pressed="false">Delivery</button>
       </div>
     </div>
     <div class="fieldset">
-      <label class="lbl" for="cName">Your name</label>
-      <input class="txt" id="cName" type="text" autocomplete="name" placeholder="Optional">
+      <label class="lbl" for="cName">Pangalan mo</label>
+      <input class="txt" id="cName" type="text" autocomplete="name" placeholder="Opsyonal">
     </div>
     <div class="fieldset" id="addrWrap" hidden>
-      <label class="lbl" for="cAddr">Delivery address</label>
-      <input class="txt" id="cAddr" type="text" autocomplete="street-address" placeholder="House no., street, barangay">
+      <label class="lbl" for="cAddr">Address para sa delivery</label>
+      <input class="txt" id="cAddr" type="text" autocomplete="street-address" placeholder="House no., kalye, barangay">
     </div>
     <div class="fieldset">
-      <label class="lbl" for="cNote">Notes</label>
-      <input class="txt" id="cNote" type="text" placeholder="Optional, e.g. preferred time">
+      <label class="lbl" for="cNote">Paalala</label>
+      <input class="txt" id="cNote" type="text" placeholder="Opsyonal, hal. oras na gusto mo">
     </div>
     <div class="fieldset">
-      <label class="lbl" for="cText">Message preview</label>
+      <label class="lbl" for="cText">Silip sa message</label>
       <textarea class="txt" id="cText" readonly></textarea>
     </div>
     <div class="cart-actions">
-      <a class="btn" id="sendBtn" href="#" target="_blank" rel="noopener">Copy order &amp; open Messenger</a>
-      <p class="hint">We copy your order for you. In Messenger, tap the message box, choose <b>Paste</b>, then send. We'll confirm availability and your final total.</p>
-      <button class="linkbtn" type="button" id="clearCart">Clear order</button>
+      <a class="btn" id="sendBtn" href="#" target="_blank" rel="noopener">I-copy at buksan ang Messenger</a>
+      <p class="hint">Kokopyahin namin ang order mo. Sa Messenger, pindutin ang message box, piliin ang <b>Paste</b>, tapos i-send. Kukumpirmahin namin kung may stock at ang final total.</p>
+      <button class="linkbtn" type="button" id="clearCart">I-clear ang order</button>
     </div>
   </div>
 </dialog>
@@ -328,7 +328,7 @@ fetch(API_URL + '?format=json')
   .then(start)
   .catch(() => {
     const c = document.getElementById('cats'); c.removeAttribute('aria-busy');
-    c.innerHTML = '<p class="empty">We couldn\'t load today\'s prices. Please refresh the page, or message us on Facebook.</p>';
+    c.innerHTML = '<p class="empty">Hindi ma-load ang presyo ngayon. I-refresh ang page, o i-message kami sa Facebook.</p>';
   });
 
 function start(DATA){
@@ -355,11 +355,12 @@ document.getElementById("favs").innerHTML = DATA.favorites.map(f =>
   if (parts.length) document.getElementById("facts").insertAdjacentHTML("beforeend", `<li><span>${esc(parts.join(" · "))}</span></li>`);
 })();
 if (!DATA.favorites.length) document.querySelector(".tag").hidden = true;
-let active = "All";
+const ALL = "Lahat";
+let active = ALL;
 const openOut = new Set();
 const filtersEl = document.getElementById("filters"), catsEl = document.getElementById("cats"), q = document.getElementById("q");
 
-["All", ...MENU.map(m => m.cat)].forEach(c => {
+[ALL, ...MENU.map(m => m.cat)].forEach(c => {
   const b = document.createElement("button");
   b.className = "chip"; b.type = "button"; b.textContent = c; b.id = "chip-" + c.replace(/\s/g,"");
   b.setAttribute("aria-pressed", c === active);
@@ -371,8 +372,8 @@ function qtyHtml(it){
   if (!it.inStock) return `<span class="qty"></span>`;
   const n = cart[it.name] || 0, a = esc(it.name);
   return n
-    ? `<span class="qty"><button class="qbtn" type="button" data-act="dec" data-n="${a}" aria-label="Remove one ${a}">−</button><span class="qn" aria-live="polite">${n}</span><button class="qbtn" type="button" data-act="inc" data-n="${a}" aria-label="Add one more ${a}">+</button></span>`
-    : `<span class="qty"><button class="qbtn add" type="button" data-act="inc" data-n="${a}" aria-label="Add ${a} to order">+</button></span>`;
+    ? `<span class="qty"><button class="qbtn" type="button" data-act="dec" data-n="${a}" aria-label="Bawasan ng isa ang ${a}">−</button><span class="qn" aria-live="polite">${n}</span><button class="qbtn" type="button" data-act="inc" data-n="${a}" aria-label="Dagdagan pa ng isa ang ${a}">+</button></span>`
+    : `<span class="qty"><button class="qbtn add" type="button" data-act="inc" data-n="${a}" aria-label="Idagdag ang ${a} sa order">+</button></span>`;
 }
 function rowHtml(it){
   const picked = (cart[it.name] || 0) > 0;
@@ -395,20 +396,20 @@ document.addEventListener("click", e => {
 
 function render(){
   const term = q.value.trim().toLowerCase();
-  const html = MENU.filter(m => active === "All" || m.cat === active).map(m => {
+  const html = MENU.filter(m => active === ALL || m.cat === active).map(m => {
     const items = m.items.filter(it => !term || (it.name+" "+m.cat).toLowerCase().includes(term));
     if (!items.length) return "";
     const inS = items.filter(it => it.inStock), outS = items.filter(it => !it.inStock);
     const showOut = !!term || openOut.has(m.cat);
     let html = `<div class="cat"><h3>${esc(m.cat)}</h3>${m.note?`<p class="cat-note">${esc(m.note)}</p>`:""}` + inS.map(rowHtml).join("");
-    if (!inS.length && !term) html += `<p class="allout">All out of stock right now. Message us to ask when it's back.</p>`;
+    if (!inS.length && !term) html += `<p class="allout">Out of stock lahat ngayon. I-message kami para malaman kung kailan babalik.</p>`;
     if (outS.length){
       if (showOut) html += outS.map(rowHtml).join("");
-      if (!term) html += `<button class="outtoggle" type="button" data-out="${esc(m.cat)}" aria-expanded="${showOut}">${showOut ? "Hide out of stock" : `Show out of stock (${outS.length})`}</button>`;
+      if (!term) html += `<button class="outtoggle" type="button" data-out="${esc(m.cat)}" aria-expanded="${showOut}">${showOut ? "Itago ang out of stock" : `Ipakita ang out of stock (${outS.length})`}</button>`;
     }
     return html + `</div>`;
   }).join("");
-  catsEl.innerHTML = html || `<p class="empty">No products match “${esc(q.value)}”. Message us and we'll check if we can get it.</p>`;
+  catsEl.innerHTML = html || `<p class="empty">Walang produktong tugma sa “${esc(q.value)}”. I-message kami at titingnan namin kung makukuha namin.</p>`;
 }
 // In-page links (Prices, How to order, See price list): scroll inside the page.
 // Apps Script runs the site inside a frame, so plain #links don't work there.
@@ -431,18 +432,18 @@ function orderText(){
   const L = lines(); let total = 0;
   const rows = L.map(({it,n}) => { const t = it.price*n; total += t; return `• ${n} × ${it.name}${it.unit?` (${it.unit})`:""} — ${peso(t)}`; });
   const name = document.getElementById("cName").value.trim(), addr = document.getElementById("cAddr").value.trim(), note = document.getElementById("cNote").value.trim();
-  return ["Hi Elelet Market! I'd like to order:", ...rows, `Estimated total: ${peso(total)}`, "",
-    `Pick up or delivery: ${mode}`,
-    name ? `Name: ${name}` : "",
+  return ["Hi Elelet Market! Order po ako ng:", ...rows, `Tantyang total: ${peso(total)}`, "",
+    mode === "Delivery" ? "Para sa delivery po." : "Ipi-pick up ko po.",
+    name ? `Pangalan: ${name}` : "",
     mode === "Delivery" && addr ? `Address: ${addr}` : "",
-    note ? `Notes: ${note}` : ""].filter((x,i,a) => x !== "" || (i>0 && a[i-1] !== "")).join("\n").trim();
+    note ? `Paalala: ${note}` : ""].filter((x,i,a) => x !== "" || (i>0 && a[i-1] !== "")).join("\n").trim();
 }
 function renderCart(){
   const L = lines();
   const count = L.reduce((s,x) => s + x.n, 0), total = L.reduce((s,x) => s + x.n*x.it.price, 0);
   bar.hidden = !count; document.body.classList.toggle("has-order", !!count);
-  document.getElementById("barSum").innerHTML = `<span class="p">${peso(total)}</span><small>${count} item${count>1?"s":""} in your order</small>`;
-  document.getElementById("cartList").innerHTML = L.length ? L.map(({it}) => rowHtml(it)).join("") : `<p class="empty">Your order is empty. Tap + next to a product to add it.</p>`;
+  document.getElementById("barSum").innerHTML = `<span class="p">${peso(total)}</span><small>${count} item sa order mo</small>`;
+  document.getElementById("cartList").innerHTML = L.length ? L.map(({it}) => rowHtml(it)).join("") : `<p class="empty">Wala pang laman ang order mo. Pindutin ang + sa tabi ng produkto.</p>`;
   document.getElementById("cartTotal").textContent = peso(total);
   document.getElementById("cartTotal").className = "p";
   document.getElementById("cText").value = orderText();
@@ -473,12 +474,12 @@ sendBtn.addEventListener("click", () => {
   let ok = false;
   try { ta.removeAttribute("readonly"); ta.select(); ok = document.execCommand("copy"); ta.setAttribute("readonly",""); } catch(e){}
   if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).catch(() => {});
-  toast(ok ? "Order copied. Paste it in Messenger and send." : "Copy the message preview, then paste it in Messenger.");
+  toast(ok ? "Na-copy na ang order. I-paste sa Messenger at i-send." : "Kopyahin ang message sa itaas, tapos i-paste sa Messenger.");
   // the link itself opens Messenger in a new tab
 });
 
 // ---- pick-up & delivery info ----
-const INFO_LABELS = { PICKUP_LOCATION:"Pick-up location", PICKUP_HOURS:"Pick-up hours", DELIVERY_AREAS:"We deliver to", DELIVERY_FEE:"Delivery fee", DELIVERY_SCHEDULE:"Delivery schedule", OTHER_NOTES:"Good to know" };
+const INFO_LABELS = { PICKUP_LOCATION:"Saan mag-pick up", PICKUP_HOURS:"Oras ng pick-up", DELIVERY_AREAS:"Nagde-deliver kami sa", DELIVERY_FEE:"Delivery fee", DELIVERY_SCHEDULE:"Araw ng delivery", OTHER_NOTES:"Dagdag na paalala" };
 const infoRows = Object.keys(INFO_LABELS).filter(k => DATA.info && String(DATA.info[k] || "").trim());
 if (infoRows.length){
   document.getElementById("infoList").innerHTML = infoRows.map(k => `<div><dt>${INFO_LABELS[k]}</dt><dd>${esc(DATA.info[k])}</dd></div>`).join("");
